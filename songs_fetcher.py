@@ -24,7 +24,7 @@ for genre in tqdm(genres):
     records = api.recommendations(genres=[genre], limit=num_of_songs_per_genre)
     records = eval(records.json().replace("null", "-999").replace("false", "False").replace("true", "True"))['tracks']
 
-    # iterates through ~1000 songs for specific genre and crawl the data
+    # iterates through ~100 songs for specific genre and crawl the data
     for record in records:
         songs['id'].append(record['id'])
         songs['genre'].append(genre)
